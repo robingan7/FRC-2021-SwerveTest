@@ -61,17 +61,21 @@ public class SwerveModule {
     // distance traveled for one rotation of the wheel divided by the encoder
     // resolution.
     //m_driveEncoder.setDistancePerPulse(ModuleConstants.kDriveEncoderDistancePerPulse);
+    m_driveEncoder.setPositionConversionFactor(ModuleConstants.kDriveEncoderDistancePerPulse);
 
     //Set whether drive encoder should be reversed or not
     //m_driveEncoder.setReverseDirection(driveEncoderReversed);
+    m_driveEncoder.setInverted(driveEncoderReversed);
 
     // Set the distance (in this case, angle) per pulse for the turning encoder.
     // This is the the angle through an entire rotation (2 * wpi::math::pi)
     // divided by the encoder resolution.
     //m_turningEncoder.setDistancePerPulse(ModuleConstants.kTurningEncoderDistancePerPulse);
+    m_turningEncoder.setPositionConversionFactor(ModuleConstants.kTurningEncoderDistancePerPulse);
 
     //Set whether turning encoder should be reversed or not
     //m_turningEncoder.setReverseDirection(turningEncoderReversed);
+    m_turningEncoder.setInverted(turningEncoderReversed);
 
     // Limit the PID Controller's input range between -pi and pi and set the input
     // to be continuous.
